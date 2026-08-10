@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Дмитрий Минаков — Go Backend Developer." />
+    <title>Дмитрий Минаков — Go Backend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Full-screen loading overlay animated by GSAP before the hero appears. -->
+    <div class="preloader" aria-hidden="true">
+      <div class="preloader__ring"></div>
+      <div class="preloader__text">loading profile</div>
+    </div>
+
+    <!-- Fixed glass navigation; .magnetic elements react to pointer movement in script.js. -->
+    <header class="site-header">
+      <a class="logo magnetic" href="#hero" aria-label="На главную">
+        <span>DM</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="magnetic" href="#about">Обо мне</a>
+        <a class="magnetic" href="#experience">Опыт</a>
+        <a class="magnetic" href="#projects">Проекты</a>
+        <a class="magnetic" href="#contact">Контакты</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero section: the first screen with main positioning, links, and animated stack card. -->
+      <section id="hero" class="hero section">
+        <div class="hero__grid" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow reveal-text">Go Backend Developer · Санкт-Петербург</p>
+          <h1 class="hero__title split-text">Дмитрий Минаков</h1>
+          <p class="hero__subtitle reveal-text">Готов к переезду в Москву</p>
+          <p class="hero__lead reveal-block">
+            Разрабатываю микросервисный backend на Go: API, авторизацию, интеграции и сервисы
+            обработки бизнес-логики.
+          </p>
+          <div class="hero__actions reveal-block">
+            <a class="button button--primary magnetic" href="mailto:dminakov118@gmail.com">Gmail</a>
+            <a
+              class="button magnetic"
+              href="https://github.com/n1ckerr0r"
+              target="_blank"
+              rel="noreferrer"
+              >GitHub</a
+            >
+            <a
+              class="button magnetic"
+              href="https://t.me/n1ckerr0r"
+              target="_blank"
+              rel="noreferrer"
+              >Telegram</a
+            >
+          </div>
+        </div>
+        <aside class="hero-card floating-card reveal-card">
+          <div class="hero-card__halo"></div>
+          <p class="hero-card__label">Languages</p>
+          <div class="orbit" aria-hidden="true">
+            <span>Go</span>
+            <span>JS/TS</span>
+            <span>Java</span>
+            <span>Python</span>
+            <span>C/C++</span>
+            <span>SQL</span>
+          </div>
+          <ul>
+            <li>Backend engineering</li>
+            <li>Frontend interfaces</li>
+            <li>Product analytics</li>
+            <li>DevOps & tooling</li>
+          </ul>
+        </aside>
+      </section>
+
+      <!-- About section: short professional summary. -->
+      <section id="about" class="section about">
+        <div class="section-heading reveal-block">
+          <p class="eyebrow">01 · Обо мне</p>
+          <h2>Пишу backend для продуктовых задач.</h2>
+        </div>
+        <div class="about__text reveal-block">
+          <p>
+            Go Backend Developer с опытом коммерческой разработки и студент третьего курса
+            направления «Информационные системы и технологии» в ИТМО. Проектирую микросервисы и
+            API-контракты, работаю с базами данных, очередями сообщений и инфраструктурой.
+          </p>
+          <p>
+            Параллельно развиваю собственные стартапы и open-source проекты. Работаю в небольших
+            командах как разработчик и координирую других разработчиков.
+          </p>
+          <p>Преподаю алгоритмы и структуры данных в ИТМО.</p>
+        </div>
+      </section>
+
+      <!-- Experience section: current role and responsibilities as a vertical timeline. -->
+      <section id="experience" class="section experience">
+        <div class="section-heading reveal-block">
+          <p class="eyebrow">02 · Опыт</p>
+          <h2>Stoqlo — Go Backend Developer</h2>
+          <span>Август 2025 — настоящее время</span>
+        </div>
+        <div class="glass-panel reveal-card">
+          <p>Stoqlo — стартап и маркетплейс для покупки и продажи бывших в употреблении товаров.</p>
+          <p>Разрабатываю и сопровождаю микросервисный backend на Go.</p>
+          <div class="timeline">
+            <div>
+              Отвечаю за развитие и поддержку сервиса авторизации: аутентификацию пользователей,
+              управление доступом и обработку ошибок.
+            </div>
+            <div>
+              Разработал API Gateway/BFF, через который frontend-клиенты взаимодействуют с
+              внутренними сервисами.
+            </div>
+            <div>
+              Реализовал в Gateway маршрутизацию запросов, проверку авторизации, валидацию данных и
+              единый формат ошибок.
+            </div>
+            <div>Разрабатываю и сопровождаю микросервис обработки заказов.</div>
+            <div>
+              Проектирую OpenAPI-спецификации и согласовываю API-контракты с
+              frontend-разработчиками.
+            </div>
+            <div>
+              Участвую в декомпозиции задач, проверке кода и подготовке изменений к релизам.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Startups and open-source projects: cards use .tilt-card for interactive 3D hover movement. -->
+      <section id="projects" class="section projects">
+        <div class="section-heading reveal-block">
+          <p class="eyebrow">03 · Стартапы и open source проекты</p>
+          <h2>Собственные production проекты.</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card reveal-card tilt-card">
+            <span>01</span>
+            <h3>Chronograph SPB</h3>
+            <p>Сервис об исторических зданиях Санкт-Петербурга.</p>
+            <a href="https://github.com/n1ckerr0r/chronograph-spb" target="_blank" rel="noreferrer"
+              >GitHub</a
+            >
+          </article>
+          <article class="project-card reveal-card tilt-card">
+            <span>02</span>
+            <h3>DailyArt</h3>
+            <p>
+              Приложение о новой картине каждый день: картина дня, коллекции, авторы, жанры и
+              избранное.
+            </p>
+            <a href="https://github.com/n1ckerr0r/daily-canvas" target="_blank" rel="noreferrer"
+              >GitHub</a
+            >
+          </article>
+          <article class="project-card reveal-card tilt-card">
+            <span>03</span>
+            <h3>DeepCode</h3>
+            <p>
+              Платформа для углублённого изучения программирования и подготовки к техническим
+              собеседованиям.
+            </p>
+            <a href="https://github.com/n1ckerr0r/deepcode" target="_blank" rel="noreferrer"
+              >GitHub</a
+            >
+          </article>
+          <article class="project-card reveal-card tilt-card">
+            <span>04</span>
+            <h3>SecureChat</h3>
+            <p>Open-source проект защищенного чата.</p>
+            <a href="https://github.com/n1ckerr0r/secure-chat" target="_blank" rel="noreferrer"
+              >GitHub</a
+            >
+          </article>
+          <article class="project-card reveal-card tilt-card">
+            <span>05</span>
+            <h3>TimeSystem</h3>
+            <p>Open-source система последовательных таймеров на Bash.</p>
+            <a href="https://github.com/n1ckerr0r/time-system" target="_blank" rel="noreferrer"
+              >GitHub</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <!-- Technology stack grouped by domain instead of one large mixed list. -->
+      <section class="section tech">
+        <div class="section-heading reveal-block">
+          <p class="eyebrow">05 · Стек технологий</p>
+          <h2>Стек технологий.</h2>
+        </div>
+        <div class="tech-groups">
+          <article class="tech-group reveal-card">
+            <h3>Backend</h3>
+            <div class="tech-cloud">
+              <span>Go · Goroutines · Channels</span><span>Java</span><span>Python</span
+              ><span>C++</span> <span>REST</span><span>gRPC</span><span>GraphQL</span
+              ><span>WebSocket</span> <span>OpenAPI / Swagger</span><span>API Gateway / BFF</span
+              ><span>JWT</span><span>OAuth 2.0</span>
+            </div>
+          </article>
+          <article class="tech-group reveal-card">
+            <h3>Frontend</h3>
+            <div class="tech-cloud">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span>
+              <span>React</span><span>Vite</span><span>Responsive UI</span><span>GSAP</span>
+            </div>
+          </article>
+          <article class="tech-group reveal-card">
+            <h3>Data & Messaging</h3>
+            <div class="tech-cloud">
+              <span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span>
+              <span>Kafka</span><span>RabbitMQ</span>
+            </div>
+          </article>
+          <article class="tech-group reveal-card">
+            <h3>Infrastructure & Quality</h3>
+            <div class="tech-cloud">
+              <span>Docker</span><span>Kubernetes</span><span>Linux</span><span>Git</span>
+              <span>CI/CD</span><span>Prometheus</span><span>Grafana</span><span>Unit tests</span
+              ><span>Integration tests</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Education block with current ITMO program and year. -->
+      <section class="section education">
+        <div class="section-heading reveal-block">
+          <p class="eyebrow">06 · Образование</p>
+          <h2>Университет ИТМО</h2>
+        </div>
+        <div class="glass-panel reveal-card">
+          <p>Третий курс, направление «Информационные системы и технологии» · Санкт-Петербург</p>
+        </div>
+      </section>
+
+      <!-- Achievements section with olympiads, hackathons, and leaderboard results. -->
+      <section class="section achievements">
+        <div class="section-heading reveal-block">
+          <p class="eyebrow">07 · Олимпиады и хакатоны</p>
+          <h2>Достижения.</h2>
+        </div>
+        <div class="achievement-list">
+          <article class="achievement-card reveal-card">
+            <span>2026</span>
+            <h3>8-е место из 335 — True Tech Спринт: промпт-инжиниринг с MWS AI</h3>
+            <p>
+              Вошёл в топ-2,4% рейтинга, решив пять прикладных задач по созданию структурированных и
+              надёжных промптов для LLM.
+            </p>
+            <a
+              href="https://truetecharena.ru/contests/true-tech-sprint-prompt-inzhiniring-s-mws-ai#leaderboard"
+              target="_blank"
+              rel="noreferrer"
+              >Таблица лидеров</a
+            >
+          </article>
+          <article class="achievement-card reveal-card">
+            <span>2024</span>
+            <h3>Призёр олимпиады «Шаг в будущее» по математике</h3>
+            <p>Результат среди учащихся 11-х классов.</p>
+            <a
+              href="https://olymp.bmstu.ru/ru/winners/list/2024/11/maths"
+              target="_blank"
+              rel="noreferrer"
+              >Официальные результаты МГТУ им. Н. Э. Баумана</a
+            >
+          </article>
+          <article class="achievement-card reveal-card">
+            <span>2024</span>
+            <h3>Призёр олимпиады «Гранит науки» по информатике</h3>
+            <p>46 баллов в заключительном этапе.</p>
+            <a
+              href="https://ogn.spmi.ru/rezultaty-zaklyuchitelnogo-tura-po-profilyu-informatika"
+              target="_blank"
+              rel="noreferrer"
+              >Официальные результаты</a
+            >
+          </article>
+          <article class="achievement-card reveal-card">
+            <span>2024</span>
+            <h3>Призёр Межрегиональной олимпиады школьников по математике</h3>
+            <p>
+              Межрегиональная олимпиада на базе ведомственных образовательных организаций —
+              «Межвед».
+            </p>
+            <a
+              href="https://diploma.rsr-olymp.ru/files/rsosh-diplomas-static/compiled-storage-2024/by-code/363783216130/color.pdf"
+              target="_blank"
+              rel="noreferrer"
+              >Диплом РСОШ</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <!-- Selected projects: marquee creates a continuously moving visual strip. -->
+      <section class="section compact-section">
+        <div class="section-heading reveal-block">
+          <p class="eyebrow">08 · Избранные проекты</p>
+          <h2>Проекты для оттачивания инженерных навыков.</h2>
+        </div>
+        <div class="marquee reveal-block" aria-label="Избранные проекты">
+          <div class="marquee__track">
+            <span>Analytics Lab</span>
+            <span>URL Shortener</span>
+            <span>LogLint</span>
+            <span>SPB Route Finder</span>
+            <span>Analytics Lab</span>
+            <span>URL Shortener</span>
+            <span>LogLint</span>
+            <span>SPB Route Finder</span>
+          </div>
+        </div>
+        <div class="link-row reveal-block">
+          <a href="https://github.com/n1ckerr0r/analytics-lab" target="_blank" rel="noreferrer"
+            >analytics-lab</a
+          >
+          <a href="https://github.com/n1ckerr0r/shortener" target="_blank" rel="noreferrer"
+            >shortener</a
+          >
+          <a href="https://github.com/n1ckerr0r/loglint" target="_blank" rel="noreferrer"
+            >loglint</a
+          >
+          <a href="https://github.com/n1ckerr0r/spb-route-finder" target="_blank" rel="noreferrer"
+            >spb-route-finder</a
+          >
+        </div>
+      </section>
+
+      <!-- Final contact CTA with direct mail, Telegram, GitHub, and phone links. -->
+      <section id="contact" class="section contact">
+        <p class="eyebrow reveal-block">09 · Контакты</p>
+        <h2 class="split-text">Буду рад обсудить проект или вакансию.</h2>
+        <div class="contact__links reveal-block">
+          <a class="magnetic" href="mailto:dminakov118@gmail.com">dminakov118@gmail.com</a>
+          <a class="magnetic" href="https://t.me/n1ckerr0r" target="_blank" rel="noreferrer"
+            >@n1ckerr0r</a
+          >
+          <a class="magnetic" href="https://github.com/n1ckerr0r" target="_blank" rel="noreferrer"
+            >github.com/n1ckerr0r</a
+          >
+          <a class="magnetic" href="tel:+79889936630">+7 988 993-66-30</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- GSAP powers the intro sequence, scroll reveals, parallax, and hover effects. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
