@@ -1,0 +1,23 @@
+{
+  "name": "my-own-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "htmlhint \"*.html\"",
+    "lint:css": "stylelint \"*.css\"",
+    "lint:js": "eslint script.js",
+    "format": "prettier --write \"*.{html,css,js,json,md}\"",
+    "format:check": "prettier --check \"*.{html,css,js,json,md}\""
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.33.0",
+    "eslint": "^9.33.0",
+    "globals": "^15.15.0",
+    "htmlhint": "^1.6.3",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.23.0",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}

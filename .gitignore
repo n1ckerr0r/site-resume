@@ -1,0 +1,8 @@
+node_modules/
+npm-debug.log*
+.DS_Store
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.pdf
+resume/*.toc
