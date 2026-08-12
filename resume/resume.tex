@@ -1,0 +1,153 @@
+\documentclass[10pt,a4paper]{article}
+
+% Base page geometry: compact margins so the resume fits on one page.
+\usepackage[margin=0.85cm]{geometry}
+% fontspec/polyglossia are required for proper Cyrillic support in XeLaTeX.
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setmainfont{DejaVu Sans}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+% Remove default page chrome and tighten the resume typography.
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\urlstyle{same}
+\setlength{\tabcolsep}{0pt}
+\setlength{\leftmargini}{1.2em}
+\setlength{\itemsep}{0pt}
+\setlength{\topsep}{1pt}
+\emergencystretch=1em
+
+\definecolor{sectioncolor}{HTML}{1F4E79}
+\definecolor{muted}{HTML}{4B5563}
+
+% Section heading: colored title plus a thin horizontal divider.
+\newcommand{\resumesection}[1]{
+  \vspace{3pt}
+  {\large\bfseries\color{sectioncolor} #1}\par
+  \vspace{1pt}
+  \hrule
+  \vspace{2pt}
+}
+
+% Two-column heading with a full-width supporting line below.
+\newcommand{\resumeEntry}[4]{
+  \noindent
+  \begin{minipage}[t]{0.69\textwidth}
+    \textbf{#1}\\[-1pt]
+    \textit{#3}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.28\textwidth}
+    \raggedleft
+    {\small\textbf{#2}}
+  \end{minipage}\par
+  {\color{muted}\small #4}\par
+}
+
+% Compact project row: title on the left, repository link on the right.
+\newcommand{\resumeProject}[3]{
+  \noindent
+  \begin{minipage}[t]{0.72\textwidth}
+    \textbf{#1}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.25\textwidth}
+    \raggedleft
+    \href{#3}{#2}
+  \end{minipage}\par
+}
+
+\begin{document}
+
+% Top block with name, role, location, and primary contact details.
+\begin{center}
+	{\LARGE \textbf{Дмитрий Минаков}}\\[6pt]
+	Go Backend Developer\\[4pt]
+	Санкт-Петербург, Россия \textbar{} Готов к переезду в Москву\\[4pt]
+	\href{mailto:dminakov118@gmail.com}{dminakov118@gmail.com}
+	\textbar{} \href{https://t.me/n1ckerr0r}{t.me/n1ckerr0r}
+	\textbar{} \href{https://github.com/n1ckerr0r}{github.com/n1ckerr0r}
+	\textbar{} +7 988 993-66-30\\[4pt]
+	{\small\href{https://n1ckerr0r.ru}{n1ckerr0r.ru} --- резюме в виде сайта}
+\end{center}
+
+% Short positioning summary: who I am and what kind of work I specialize in.
+\resumesection{Обо мне}
+Go Backend Developer с опытом коммерческой разработки микросервисных систем. Проектирую API, работаю с аутентификацией и авторизацией, разрабатываю сервисы бизнес-логики, интеграции и backend-инфраструктуру. Развиваю собственные стартапы и open-source проекты, преподаю алгоритмы и структуры данных в ИТМО.
+
+% Skills are grouped by area to make them easier to scan visually.
+\resumesection{Навыки}
+{\small\textbf{Backend:} Go, goroutines, channels, context, sync, middleware, REST, gRPC, GraphQL,\\ WebSocket, OpenAPI/Swagger, Java, Python, C++}
+
+\vspace{1pt}
+{\small\textbf{Architecture:} микросервисы, API Gateway, event-driven architecture, SOLID, DRY, KISS,\\ GRASP, design patterns}
+
+\vspace{1pt}
+{\small\textbf{Security:} JWT, OAuth 2.0, TLS}
+
+\vspace{1pt}
+{\small\textbf{Data \& queues:} PostgreSQL, MySQL, MongoDB, Redis, Kafka, RabbitMQ}
+
+\vspace{1pt}
+{\small\textbf{Testing:} unit tests, integration tests, mocks}
+
+\vspace{1pt}
+{\small\textbf{Infrastructure \& quality:} Docker, Kubernetes, Linux, Git, CI/CD, Prometheus, Grafana}
+
+\vspace{1pt}
+{\small\textbf{Frontend:} HTML, CSS, JavaScript, TypeScript, React}
+
+% Main commercial experience and key areas of responsibility.
+\resumesection{Опыт}
+\resumeEntry
+{Stoqlo}
+{август 2025 -- настоящее время}
+{Go Backend Developer}
+{Стартап-маркетплейс для покупки и продажи бывших в употреблении товаров}
+\begin{itemize}
+	\item Стек: Go, REST/gRPC, PostgreSQL, Redis, Kafka, MongoDB, JWT/OAuth 2.0, TLS, unit/integration tests и mocks.
+	\item Отвечаю за развитие и поддержку сервиса авторизации: аутентификацию, управление доступом и обработку ошибок.
+	\item Разработал слой API Gateway/BFF, через который frontend-клиенты взаимодействуют с внутренними сервисами.
+	\item Реализовал в gateway маршрутизацию запросов, проверку авторизации, валидацию данных и единый формат ошибок.
+	\item Разрабатываю и сопровождаю микросервис обработки заказов.
+	\item Проектирую OpenAPI-спецификации и согласовываю API-контракты с frontend developers.
+	\item Участвую в декомпозиции задач, проверке кода и подготовке изменений к релизам.
+\end{itemize}
+
+% Short list of personal and open-source projects.
+\resumesection{Избранные проекты}
+\resumeProject{Daily Canvas}{GitHub}{https://github.com/n1ckerr0r/daily-canvas}
+Приложение о новой картине каждый день: картина дня, коллекции, авторы, жанры и избранное.
+
+\vspace{2pt}
+\resumeProject{DeepCode}{GitHub}{https://github.com/n1ckerr0r/deepcode}
+Платформа для углублённого изучения программирования и подготовки к техническим собеседованиям.
+
+\vspace{2pt}
+\resumeProject{Shortener}{GitHub}{https://github.com/n1ckerr0r/shortener}
+Инженерный проект: URL shortener на Go с HTTP API, gRPC, PostgreSQL, Redis, Kafka, MongoDB, RabbitMQ, Prometheus, Grafana, Docker Compose и worker pools.
+
+\vspace{2pt}
+\resumeProject{Chronograph SPB}{GitHub}{https://github.com/n1ckerr0r/chronograph-spb}
+Сервис об исторических зданиях Санкт-Петербурга.
+
+% Current higher education.
+\resumesection{Образование}
+\resumeEntry
+{Университет ИТМО}
+{2024 -- настоящее время}
+{Информационные системы и технологии}
+{3 курс, Санкт-Петербург}
+
+% Competitions and olympiads that support the stated skill level.
+\resumesection{Достижения}
+\begin{itemize}
+	\item \href{https://truetecharena.ru/contests/true-tech-sprint-prompt-inzhiniring-s-mws-ai#leaderboard}{\textbf{True Tech Спринт: промпт-инжиниринг с MWS AI}} --- 8-е место из 335 участников в 2026 году, топ-2{,}4\%.
+	\item \href{https://olymp.bmstu.ru/ru/winners/list/2024/11/maths}{Призёр олимпиады \textbf{«Шаг в будущее»} по математике в 2024 году.}
+	\item \href{https://ogn.spmi.ru/rezultaty-zaklyuchitelnogo-tura-po-profilyu-informatika}{Призёр олимпиады \textbf{«Гранит науки»} по информатике в 2024 году.}
+	\item \href{https://diploma.rsr-olymp.ru/files/rsosh-diplomas-static/compiled-storage-2024/by-code/363783216130/color.pdf}{Призёр \textbf{Межрегиональной олимпиады школьников} по математике в 2024 году.}
+\end{itemize}
+
+\end{document}
