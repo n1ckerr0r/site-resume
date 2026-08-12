@@ -6,3 +6,5 @@ resume/*.log
 resume/*.out
 resume/*.pdf
 resume/*.toc
+resume/*.fdb_latexmk
+resume/*.fls
