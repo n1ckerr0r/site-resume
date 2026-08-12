@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Full-screen loading overlay animated by GSAP before the hero appears. -->
+    <!-- Прелоадер на весь экран: показывается до старта вступительной анимации. -->
     <div class="preloader" aria-hidden="true">
       <div class="preloader__ring"></div>
-      <div class="preloader__text">loading profile</div>
+      <div class="preloader__text">загрузка профиля</div>
     </div>
 
     <!-- Fixed glass navigation; .magnetic elements react to pointer movement in script.js. -->
@@ -34,7 +34,7 @@
     </header>
 
     <main>
-      <!-- Hero section: the first screen with main positioning, links, and animated stack card. -->
+      <!-- Первый экран: имя, роль, контакты и плавающая карточка со стеком. -->
       <section id="hero" class="hero section">
         <div class="hero__grid" aria-hidden="true"></div>
         <div class="hero__content">
@@ -65,7 +65,7 @@
         </div>
         <aside class="hero-card floating-card reveal-card">
           <div class="hero-card__halo"></div>
-          <p class="hero-card__label">Languages</p>
+          <p class="hero-card__label">Языки и стек</p>
           <div class="orbit" aria-hidden="true">
             <span>Go</span>
             <span>JS/TS</span>
@@ -75,15 +75,15 @@
             <span>SQL</span>
           </div>
           <ul>
-            <li>Backend engineering</li>
-            <li>Frontend interfaces</li>
-            <li>Product analytics</li>
-            <li>DevOps & tooling</li>
+            <li>Backend-разработка</li>
+            <li>Frontend-интерфейсы</li>
+            <li>Продуктовая аналитика</li>
+            <li>DevOps и инструменты</li>
           </ul>
         </aside>
       </section>
 
-      <!-- About section: short professional summary. -->
+      <!-- Блок "Обо мне": короткое профессиональное резюме и контекст по роли. -->
       <section id="about" class="section about">
         <div class="section-heading reveal-block">
           <p class="eyebrow">01 · Обо мне</p>
@@ -97,22 +97,86 @@
           </p>
           <p>
             Параллельно развиваю собственные стартапы и open-source проекты. Работаю в небольших
-            командах как разработчик и координирую других разработчиков.
+            командах как backend developer и координирую других разработчиков.
           </p>
           <p>Преподаю алгоритмы и структуры данных в ИТМО.</p>
         </div>
       </section>
 
-      <!-- Experience section: current role and responsibilities as a vertical timeline. -->
+      <!-- Стек сгруппирован по направлениям, чтобы его было проще просматривать. -->
+      <section class="section tech">
+        <div class="section-heading reveal-block">
+          <p class="eyebrow">02 · Навыки</p>
+          <h2>Стек технологий.</h2>
+        </div>
+        <div class="tech-groups">
+          <article class="tech-group reveal-card">
+            <h3>Backend</h3>
+            <div class="tech-cloud">
+              <span>Go</span><span>Goroutines</span><span>Channels</span><span>Context</span>
+              <span>Sync</span><span>Middleware</span><span>REST</span><span>gRPC</span>
+              <span>GraphQL</span><span>WebSocket</span><span>OpenAPI / Swagger</span>
+              <span>Java</span><span>Python</span><span>C++</span>
+            </div>
+          </article>
+          <article class="tech-group reveal-card">
+            <h3>Architecture</h3>
+            <div class="tech-cloud">
+              <span>Microservices</span><span>API Gateway</span><span>Event-driven architecture</span>
+              <span>SOLID</span><span>DRY</span><span>KISS</span><span>GRASP</span>
+              <span>Design patterns</span>
+            </div>
+          </article>
+          <article class="tech-group reveal-card">
+            <h3>Security</h3>
+            <div class="tech-cloud">
+              <span>JWT</span><span>OAuth 2.0</span><span>TLS</span>
+            </div>
+          </article>
+          <article class="tech-group reveal-card">
+            <h3>Data &amp; queues</h3>
+            <div class="tech-cloud">
+              <span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span>
+              <span>Kafka</span><span>RabbitMQ</span>
+            </div>
+          </article>
+          <article class="tech-group reveal-card">
+            <h3>Testing</h3>
+            <div class="tech-cloud">
+              <span>Unit tests</span><span>Integration tests</span><span>Mocks</span>
+            </div>
+          </article>
+          <article class="tech-group reveal-card">
+            <h3>Infrastructure &amp; quality</h3>
+            <div class="tech-cloud">
+              <span>Docker</span><span>Kubernetes</span><span>Linux</span><span>Git</span>
+              <span>CI/CD</span><span>Prometheus</span><span>Grafana</span>
+            </div>
+          </article>
+          <article class="tech-group reveal-card">
+            <h3>Frontend</h3>
+            <div class="tech-cloud">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span>
+              <span>React</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Блок опыта: текущее место работы и основные зоны ответственности. -->
       <section id="experience" class="section experience">
         <div class="section-heading reveal-block">
-          <p class="eyebrow">02 · Опыт</p>
+          <p class="eyebrow">03 · Опыт</p>
           <h2>Stoqlo — Go Backend Developer</h2>
           <span>Август 2025 — настоящее время</span>
         </div>
         <div class="glass-panel reveal-card">
-          <p>Stoqlo — стартап и маркетплейс для покупки и продажи бывших в употреблении товаров.</p>
-          <p>Разрабатываю и сопровождаю микросервисный backend на Go.</p>
+          <p>Stoqlo — стартап-маркетплейс для покупки и продажи бывших в употреблении товаров.</p>
+          <p>
+            Разрабатываю и сопровождаю микросервисный backend на Go: goroutines, channels, context,
+            sync, middleware, REST/gRPC, PostgreSQL, Redis, Kafka, MongoDB, JWT, OAuth 2.0, TLS,
+            unit/integration tests и mocks.
+          </p>
           <div class="timeline">
             <div>
               Отвечаю за развитие и поддержку сервиса авторизации: аутентификацию пользователей,
@@ -129,7 +193,7 @@
             <div>Разрабатываю и сопровождаю микросервис обработки заказов.</div>
             <div>
               Проектирую OpenAPI-спецификации и согласовываю API-контракты с
-              frontend-разработчиками.
+              frontend developers.
             </div>
             <div>
               Участвую в декомпозиции задач, проверке кода и подготовке изменений к релизам.
@@ -138,24 +202,16 @@
         </div>
       </section>
 
-      <!-- Startups and open-source projects: cards use .tilt-card for interactive 3D hover movement. -->
+      <!-- Собственные и open-source проекты: карточки используют .tilt-card для 3D-hover эффекта. -->
       <section id="projects" class="section projects">
         <div class="section-heading reveal-block">
-          <p class="eyebrow">03 · Стартапы и open source проекты</p>
-          <h2>Собственные production проекты.</h2>
+          <p class="eyebrow">04 · Избранные проекты</p>
+          <h2>Собственные и инженерные проекты.</h2>
         </div>
         <div class="project-grid">
           <article class="project-card reveal-card tilt-card">
             <span>01</span>
-            <h3>Chronograph SPB</h3>
-            <p>Сервис об исторических зданиях Санкт-Петербурга.</p>
-            <a href="https://github.com/n1ckerr0r/chronograph-spb" target="_blank" rel="noreferrer"
-              >GitHub</a
-            >
-          </article>
-          <article class="project-card reveal-card tilt-card">
-            <span>02</span>
-            <h3>DailyArt</h3>
+            <h3>Daily Canvas</h3>
             <p>
               Приложение о новой картине каждый день: картина дня, коллекции, авторы, жанры и
               избранное.
@@ -165,7 +221,7 @@
             >
           </article>
           <article class="project-card reveal-card tilt-card">
-            <span>03</span>
+            <span>02</span>
             <h3>DeepCode</h3>
             <p>
               Платформа для углублённого изучения программирования и подготовки к техническим
@@ -176,80 +232,50 @@
             >
           </article>
           <article class="project-card reveal-card tilt-card">
+            <span>03</span>
+            <h3>Shortener</h3>
+            <p>
+              Инженерный проект: URL shortener на Go с HTTP API, gRPC, PostgreSQL, Redis, Kafka,
+              MongoDB, RabbitMQ, Prometheus, Grafana, Docker Compose и worker pools.
+            </p>
+            <a href="https://github.com/n1ckerr0r/shortener" target="_blank" rel="noreferrer"
+              >GitHub</a
+            >
+          </article>
+          <article class="project-card reveal-card tilt-card">
             <span>04</span>
+            <h3>Chronograph SPB</h3>
+            <p>Сервис об исторических зданиях Санкт-Петербурга.</p>
+            <a href="https://github.com/n1ckerr0r/chronograph-spb" target="_blank" rel="noreferrer"
+              >GitHub</a
+            >
+          </article>
+          <article class="project-card reveal-card tilt-card">
+            <span>05</span>
             <h3>SecureChat</h3>
             <p>Open-source проект защищенного чата.</p>
             <a href="https://github.com/n1ckerr0r/secure-chat" target="_blank" rel="noreferrer"
               >GitHub</a
             >
           </article>
-          <article class="project-card reveal-card tilt-card">
-            <span>05</span>
-            <h3>TimeSystem</h3>
-            <p>Open-source система последовательных таймеров на Bash.</p>
-            <a href="https://github.com/n1ckerr0r/time-system" target="_blank" rel="noreferrer"
-              >GitHub</a
-            >
-          </article>
         </div>
       </section>
 
-      <!-- Technology stack grouped by domain instead of one large mixed list. -->
-      <section class="section tech">
-        <div class="section-heading reveal-block">
-          <p class="eyebrow">05 · Стек технологий</p>
-          <h2>Стек технологий.</h2>
-        </div>
-        <div class="tech-groups">
-          <article class="tech-group reveal-card">
-            <h3>Backend</h3>
-            <div class="tech-cloud">
-              <span>Go · Goroutines · Channels</span><span>Java</span><span>Python</span
-              ><span>C++</span> <span>REST</span><span>gRPC</span><span>GraphQL</span
-              ><span>WebSocket</span> <span>OpenAPI / Swagger</span><span>API Gateway / BFF</span
-              ><span>JWT</span><span>OAuth 2.0</span>
-            </div>
-          </article>
-          <article class="tech-group reveal-card">
-            <h3>Frontend</h3>
-            <div class="tech-cloud">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span>
-              <span>React</span><span>Vite</span><span>Responsive UI</span><span>GSAP</span>
-            </div>
-          </article>
-          <article class="tech-group reveal-card">
-            <h3>Data & Messaging</h3>
-            <div class="tech-cloud">
-              <span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span>
-              <span>Kafka</span><span>RabbitMQ</span>
-            </div>
-          </article>
-          <article class="tech-group reveal-card">
-            <h3>Infrastructure & Quality</h3>
-            <div class="tech-cloud">
-              <span>Docker</span><span>Kubernetes</span><span>Linux</span><span>Git</span>
-              <span>CI/CD</span><span>Prometheus</span><span>Grafana</span><span>Unit tests</span
-              ><span>Integration tests</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- Education block with current ITMO program and year. -->
+      <!-- Блок образования: текущая программа в ИТМО и стадия обучения. -->
       <section class="section education">
         <div class="section-heading reveal-block">
-          <p class="eyebrow">06 · Образование</p>
+          <p class="eyebrow">05 · Образование</p>
           <h2>Университет ИТМО</h2>
         </div>
         <div class="glass-panel reveal-card">
-          <p>Третий курс, направление «Информационные системы и технологии» · Санкт-Петербург</p>
+          <p>2024 — настоящее время · третий курс · направление «Информационные системы и технологии»</p>
         </div>
       </section>
 
-      <!-- Achievements section with olympiads, hackathons, and leaderboard results. -->
+      <!-- Блок достижений: олимпиады, соревнования и подтверждённые результаты. -->
       <section class="section achievements">
         <div class="section-heading reveal-block">
-          <p class="eyebrow">07 · Олимпиады и хакатоны</p>
+          <p class="eyebrow">06 · Олимпиады и хакатоны</p>
           <h2>Достижения.</h2>
         </div>
         <div class="achievement-list">
@@ -306,30 +332,27 @@
         </div>
       </section>
 
-      <!-- Selected projects: marquee creates a continuously moving visual strip. -->
+      <!-- Дополнительные проекты: бегущая строка и ссылки на репозитории. -->
       <section class="section compact-section">
         <div class="section-heading reveal-block">
-          <p class="eyebrow">08 · Избранные проекты</p>
+          <p class="eyebrow">07 · Инженерные проекты</p>
           <h2>Проекты для оттачивания инженерных навыков.</h2>
         </div>
         <div class="marquee reveal-block" aria-label="Избранные проекты">
           <div class="marquee__track">
-            <span>Analytics Lab</span>
-            <span>URL Shortener</span>
+            <span>Лаборатория аналитики</span>
             <span>LogLint</span>
-            <span>SPB Route Finder</span>
-            <span>Analytics Lab</span>
-            <span>URL Shortener</span>
+            <span>Поиск маршрутов по СПб</span>
+            <span>TimeSystem</span>
+            <span>Лаборатория аналитики</span>
             <span>LogLint</span>
-            <span>SPB Route Finder</span>
+            <span>Поиск маршрутов по СПб</span>
+            <span>TimeSystem</span>
           </div>
         </div>
         <div class="link-row reveal-block">
           <a href="https://github.com/n1ckerr0r/analytics-lab" target="_blank" rel="noreferrer"
             >analytics-lab</a
-          >
-          <a href="https://github.com/n1ckerr0r/shortener" target="_blank" rel="noreferrer"
-            >shortener</a
           >
           <a href="https://github.com/n1ckerr0r/loglint" target="_blank" rel="noreferrer"
             >loglint</a
@@ -337,12 +360,15 @@
           <a href="https://github.com/n1ckerr0r/spb-route-finder" target="_blank" rel="noreferrer"
             >spb-route-finder</a
           >
+          <a href="https://github.com/n1ckerr0r/time-system" target="_blank" rel="noreferrer"
+            >time-system</a
+          >
         </div>
       </section>
 
-      <!-- Final contact CTA with direct mail, Telegram, GitHub, and phone links. -->
+      <!-- Финальный контактный блок: основные каналы связи и CTA на диалог. -->
       <section id="contact" class="section contact">
-        <p class="eyebrow reveal-block">09 · Контакты</p>
+        <p class="eyebrow reveal-block">08 · Контакты</p>
         <h2 class="split-text">Буду рад обсудить проект или вакансию.</h2>
         <div class="contact__links reveal-block">
           <a class="magnetic" href="mailto:dminakov118@gmail.com">dminakov118@gmail.com</a>
@@ -357,7 +383,7 @@
       </section>
     </main>
 
-    <!-- GSAP powers the intro sequence, scroll reveals, parallax, and hover effects. -->
+    <!-- GSAP отвечает за вступительную анимацию, reveal-эффекты и интерактивные hover-состояния. -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>

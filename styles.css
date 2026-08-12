@@ -1,5 +1,5 @@
 :root {
-  /* Central theme tokens used across the whole page. */
+  /* Global theme tokens: colors, panels, and the base shadow used across the site. */
   --bg: #030305;
   --panel: rgba(255, 255, 255, 0.055);
   --panel-strong: rgba(255, 255, 255, 0.105);
@@ -62,7 +62,7 @@ a {
 }
 
 .preloader {
-  /* Covers the page until the first GSAP timeline reveals the hero. */
+  /* Covers the page until the main hero animation starts. */
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -90,7 +90,7 @@ a {
 }
 
 .site-header {
-  /* Floating glass navigation that stays visible while scrolling. */
+  /* Fixed glass navigation that stays visible while scrolling. */
   position: fixed;
   top: 1.2rem;
   left: 50%;
@@ -142,7 +142,7 @@ a {
 }
 
 .section {
-  /* Shared content width and vertical rhythm for every page section. */
+  /* Shared content width and vertical rhythm for all page sections. */
   position: relative;
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
@@ -168,7 +168,7 @@ a {
 }
 
 .hero {
-  /* First screen layout: text on the left, animated card on the right. */
+  /* Hero section: text content on the left and an interactive card on the right. */
   display: grid;
   min-height: 100vh;
   grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
@@ -194,7 +194,7 @@ a {
 }
 
 .hero__grid {
-  /* Decorative static grid; keeping it still prevents background shimmer. */
+  /* Decorative background grid kept static to avoid unnecessary flicker. */
   position: absolute;
   inset: 12% -8% 4%;
   z-index: -1;
@@ -232,7 +232,7 @@ a {
 }
 
 .word {
-  /* Wrapper that hides characters before the split-text reveal animation. */
+  /* The word container hides characters until the split-text animation begins. */
   display: inline-block;
   overflow: hidden;
   vertical-align: top;

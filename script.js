@@ -1,12 +1,13 @@
+// Register the plugin that tracks when sections enter the viewport.
 gsap.registerPlugin(ScrollTrigger);
 
-// Marks that JavaScript is running; useful if we later add no-JS fallbacks.
+// Mark that JavaScript is active so no-JS fallbacks can react if needed.
 document.documentElement.classList.add("js-ready");
 
-// Respect users who prefer reduced motion at the OS/browser level.
+// Respect the system reduced-motion preference and avoid overwhelming those users.
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-// Splits heading text into words and characters so GSAP can reveal letters one by one.
+// Split heading text into words and characters so GSAP can animate it letter by letter.
 function splitText(selector) {
   document.querySelectorAll(selector).forEach((element) => {
     const words = element.textContent.trim().split(" ");
@@ -21,12 +22,12 @@ function splitText(selector) {
 
 splitText(".split-text");
 
-// Initial hidden states. GSAP animates these elements back into view.
+// Base hidden states that the page intro animation starts from.
 gsap.set(".site-header", { y: -40, opacity: 0 });
 gsap.set(".char", { yPercent: 112, rotate: 6 });
 gsap.set(".reveal-text, .reveal-block, .reveal-card", { y: 34, opacity: 0 });
 
-// Infinite loading spinner shown while the intro timeline waits to start.
+// Keep the preloader ring spinning until the main timeline begins.
 gsap.to(".preloader__ring", {
   rotate: 360,
   duration: 0.9,
@@ -34,7 +35,7 @@ gsap.to(".preloader__ring", {
   repeat: -1,
 });
 
-// Main page intro: hides loader, shows nav, reveals hero letters, then content blocks.
+// Main intro timeline: hide the preloader, reveal the header, and stage the hero section.
 gsap
   .timeline({ defaults: { ease: "power4.out" } })
   .to(".preloader", {
@@ -50,7 +51,7 @@ gsap
   .to(".hero .reveal-card", { y: 0, opacity: 1, scale: 1, duration: 1 }, "-=0.7");
 
 if (!prefersReducedMotion) {
-  // Counter-rotation keeps orbit labels readable while the orbit itself spins.
+  // Rotate the outer orbit one way and the labels the other so the text stays readable.
   gsap.to(".orbit", {
     rotate: 360,
     duration: 22,
@@ -65,7 +66,7 @@ if (!prefersReducedMotion) {
     ease: "none",
   });
 
-  // Hero card gently floats, creating depth before any user interaction.
+  // Let the floating hero card gently "breathe" to add depth before any interaction.
   gsap.to(".floating-card", {
     y: -22,
     rotateX: 4,
@@ -76,7 +77,7 @@ if (!prefersReducedMotion) {
     ease: "sine.inOut",
   });
 
-  // Endless horizontal movement for the secondary projects marquee.
+  // Move the project marquee endlessly so the section does not feel static.
   gsap.to(".marquee__track", {
     xPercent: -50,
     duration: 16,
@@ -85,7 +86,7 @@ if (!prefersReducedMotion) {
   });
 }
 
-// Reveals split characters in non-hero sections when their section enters the viewport.
+// Reveal non-hero headings character by character when their section enters the viewport.
 gsap.utils.toArray(".section:not(.hero) .char").forEach((char) => {
   gsap.to(char, {
     yPercent: 0,
@@ -99,7 +100,7 @@ gsap.utils.toArray(".section:not(.hero) .char").forEach((char) => {
   });
 });
 
-// Reveals text/content blocks on scroll.
+// Standard text blocks fade in and rise slightly on scroll.
 gsap.utils.toArray(".section:not(.hero) .reveal-block").forEach((block) => {
   gsap.to(block, {
     y: 0,
@@ -113,7 +114,7 @@ gsap.utils.toArray(".section:not(.hero) .reveal-block").forEach((block) => {
   });
 });
 
-// Reveals glass cards on scroll.
+// Reveal glass-effect cards separately to preserve focus on them.
 gsap.utils.toArray(".section:not(.hero) .reveal-card").forEach((card) => {
   gsap.to(card, {
     y: 0,
@@ -127,7 +128,7 @@ gsap.utils.toArray(".section:not(.hero) .reveal-card").forEach((card) => {
   });
 });
 
-// Magnetic hover: links/buttons move slightly toward the pointer and snap back on leave.
+// Magnetic hover for links and buttons: the element follows the cursor slightly, then snaps back.
 document.querySelectorAll(".magnetic").forEach((element) => {
   element.addEventListener("pointermove", (event) => {
     const rect = element.getBoundingClientRect();
@@ -151,7 +152,7 @@ document.querySelectorAll(".magnetic").forEach((element) => {
   });
 });
 
-// 3D hover tilt for project cards based on pointer position inside each card.
+// Project card 3D tilt depends on the cursor position inside each specific card.
 document.querySelectorAll(".tilt-card").forEach((card) => {
   card.addEventListener("pointermove", (event) => {
     const rect = card.getBoundingClientRect();
